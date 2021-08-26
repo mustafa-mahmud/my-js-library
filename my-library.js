@@ -1,8 +1,9 @@
 'use strict';
 
-function rand(...arr) {
+function randAll(...arr) {
   let userData = arr;
   let store = [];
+  let send = [];
 
   function doRandom() {
     const num = Math.floor(Math.random() * userData.length);
@@ -11,12 +12,10 @@ function rand(...arr) {
       doRandom();
     }
 
-    userData = userData.map((_, ind) => userData[store[ind]]);
-
-    return userData;
+    send = userData.map((_, ind) => userData[store[ind]]);
   }
 
   doRandom();
 
-  return userData;
+  return send;
 }
